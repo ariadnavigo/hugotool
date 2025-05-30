@@ -1,0 +1,29 @@
+#!/bin/sh
+# See LICENSE file for copyright and license details.
+
+die() {
+	echo "$1" >&2
+	exit 1
+}
+
+usage() {
+	die "usage: hugodateup FILE"
+}
+
+if ! [ "$1" ]; then
+	usage
+fi
+
+# 'date -I' is a GNU extension. Needed because POSIX doesn't seem to support
+# any flag that outputs '+/-HH:MM' formatted timezone offsets. This needs to be
+# fixed somehow to get to standard compliance.
+newdate="$(date -I'seconds')"
+
+# We're only supporting TOML right now.
+sed -E "s/^date = .*?$/date = '$newdate'/" "$1" > "$1.hugodateup"
+
+# We're avoiding 'sed -i' as it's a non-POSIX extension, even though it's quite
+# widespread across different implementations. As the goal is to get rid of the
+# use of the GNU extension 'date -I' above, let's try to stick to standard 
+# compliant code as much as possible.
+mv "$1.hugodateup" "$1"
