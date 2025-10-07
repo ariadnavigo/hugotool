@@ -10,7 +10,7 @@ usage() {
 	die "usage: hugodateup FILE"
 }
 
-if ! [ "$1" ]; then
+if [ -z "${1}" ]; then
 	usage
 fi
 
@@ -20,10 +20,10 @@ fi
 newdate="$(date -I'seconds')"
 
 # We're only supporting TOML right now.
-sed -E "s/^date = .*?$/date = '$newdate'/" "$1" > "$1.hugodateup"
+sed -E "s/^date = .*?$/date = '${newdate}'/" "${1}" > "${1}.hugodateup"
 
 # We're avoiding 'sed -i' as it's a non-POSIX extension, even though it's quite
 # widespread across different implementations. As the goal is to get rid of the
 # use of the GNU extension 'date -I' above, let's try to stick to standard 
 # compliant code as much as possible.
-mv "$1.hugodateup" "$1"
+mv "${1}.hugodateup" "${1}"
