@@ -2,16 +2,16 @@
 # See LICENSE file for copyright and license details.
 
 die() {
-	echo "$1" >&2
-	exit 1
+    echo "$1" >&2
+    exit 1
 }
 
 usage() {
-	die "usage: hugodateup FILE"
+    die "usage: hugodateup FILE"
 }
 
 if [ -z "${1}" ]; then
-	usage
+    usage
 fi
 
 # 'date -I' is a GNU extension. Needed because POSIX doesn't seem to support
