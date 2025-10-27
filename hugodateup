@@ -1,13 +1,9 @@
 #!/bin/sh
 # See LICENSE file for copyright and license details.
 
-die() {
-    echo "$1" >&2
-    exit 1
-}
-
 usage() {
-    die "usage: hugodateup FILE"
+    echo "usage: hugodateup FILE" >&2
+    exit 1
 }
 
 if [ -z "${1}" ]; then
