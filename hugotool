@@ -41,9 +41,9 @@ undraft() {
 }
 
 case ${1} in
-"dateup") dateup "${2}";;
-"undraft") undraft "${2}";;
-*) usage;;
+    "dateup") dateup "${2}";;
+    "undraft") undraft "${2}";;
+    *) usage;;
 esac
 
 exit 0
