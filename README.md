@@ -1,14 +1,20 @@
 # hugodateup - Update date on Hugo posts
 
-hugodateup is a POSIX shell script that updates the date on a Hugo post
-frontmatter to the current date. It does so in a **destructive** way, by
-modifying the original file.
+hugodateup is a POSIX shell script that allows some modifications on Hugo posts
+frontmatter: updating the publication date to the current date and removing
+draft status from a post. It does so in a **destructive** way, by modifying the
+original file.
 
 ## Usage
 
 To use hugodateup just invoke the script as follows:
 
-``$ hugodateup FILE``
+``$ hugodateup CMD FILE``
+
+Available commands follow:
+
+* ``dateup:`` Update a hugo post's date.
+* ``undraft:`` Remove draft status from a post.
 
 ## Known issues
 
