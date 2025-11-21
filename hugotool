@@ -5,7 +5,7 @@ usage() {
     echo 'usage: hugotool CMD FILE' >&2
     echo
     echo 'Commands:'
-    printf "dateup\tUpdate a hugo post's date.\n"
+    printf "dateup\tUpdate the date of a post to the current date.\n"
     printf "undraft\tRemove draft status from a post.\n"
     exit 1
 }

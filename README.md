@@ -1,9 +1,8 @@
 # hugotool - Basic Hugo post modification tool
 
-hugotool is a POSIX shell script that allows some modifications on Hugo posts
-frontmatter: updating the publication date to the current date and removing
-draft status from a post. It does so in a **destructive** way, by modifying the
-original file.
+hugotool is a POSIX shell script that allows some basic modifications to the
+frontmatter section of Hugo posts. It does so in a **destructive** way, by
+modifying the original file.
 
 ## Usage
 
@@ -13,7 +12,7 @@ To use hugotool just invoke the script as follows:
 
 Available commands follow:
 
-* ``dateup:`` Update a hugo post's date.
+* ``dateup:`` Update the date of a post to the current date.
 * ``undraft:`` Remove draft status from a post.
 
 ## Known issues
