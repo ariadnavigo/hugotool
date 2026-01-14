@@ -5,12 +5,12 @@ usage() {
     echo 'usage: hugotool CMD FILE' >&2
     echo
     echo 'Commands:'
-    printf "dateup\tUpdate the date of a post to the current date.\n"
+    printf "update\tUpdate the date of a post to the current date.\n"
     printf "undraft\tRemove draft status from a post.\n"
     exit 1
 }
 
-dateup() {
+update() {
     if [ -z "${1}" ]; then
         usage
     fi
@@ -41,7 +41,7 @@ undraft() {
 }
 
 case ${1} in
-    "dateup") dateup "${2}";;
+    "update") update "${2}";;
     "undraft") undraft "${2}";;
     *) usage;;
 esac

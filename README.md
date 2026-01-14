@@ -14,7 +14,7 @@ $ hugotool CMD FILE
 
 Available commands follow:
 
-* ``dateup:`` Update the date of a post to the current date.
+* ``update:`` Update the date of a post to the current date.
 * ``undraft:`` Remove draft status from a post.
 
 ## Known issues
