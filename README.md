@@ -17,17 +17,48 @@ Available commands follow:
 * ``update:`` Update the date of a post to the current date.
 * ``undraft:`` Remove draft status from a post.
 
-## Known issues
+## Contributing
 
-This script is written for POSIX shell, but requires the use of the GNU 
-coreutils version of ``date(1)``, or, alternatively, an implementation thereof
-that supports the ``-I`` flag as implemented by GNU. Standard compliance is a
-goal, so we hope this can be fixed accordingly.
+Patches and discussion are welcome at the [hugotool-devel mailing
+list][hugotool-devel-ml]. If you are not familiar with the Git email patch
+workflow, [git-send-email.io][git-mail-web] is a great resource that walks you
+through the basics. 
 
-Currently, hugotool is only able to modify Hugo post files whose frontmatter 
-is formatted in TOML. YAML support is pending.
+When sending a patch for the first time, it is highly recommended to set up the
+email address like this:
+
+```shell-session
+$ git config sendemail.to "~ariadna/hugotool-devel@lists.sr.ht"
+```
+
+The first version of a patch should be marked using ``-v1``:
+
+```shell-session
+$ git send-email --anotate -v1 HEAD^
+```
+
+For further versions of the patch, change ``-v1`` to ``-v2,-v3,...`` as
+required.
+
+Subscribe to the [hugotool-announce mailing list][hugotool-announce-ml] for
+announcements about releases and other critical milestones.
+
+Tickets are tracked at the [hugotool tracker][hugotool-tracker].
+
+You may find further information about this project at the [hugotool project
+hub][hugotool-hub] as well.
 
 ## License
 
 hugotool is licensed under the MIT License. See LICENSE file for copyright and 
 license details.
+
+[hugotool-devel-ml]: https://lists.sr.ht/~ariadna/hugotool-devel
+
+[git-mail-web]: https://git-send-email.io/
+
+[hugotool-announce-ml]: https://lists.sr.ht/~ariadna/hugotool-announce
+
+[hugotool-tracker]: https://todo.sr.ht/~ariadna/hugotool
+
+[hugotool-hub]: https://sr.ht/~ariadna/hugotool
