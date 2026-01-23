@@ -4,6 +4,10 @@ hugotool is a POSIX shell script that allows some basic modifications to the
 frontmatter section of Hugo posts. It does so in a **destructive** way, by
 modifying the original file.
 
+**Note:** This project is going to be go through a major rewrite in the short
+term. More details can be found in the project's [mailing
+list.][hugotool-devel-ml]
+
 ## Usage
 
 To use hugotool just invoke the script as follows:
