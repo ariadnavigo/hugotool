@@ -1,4 +1,4 @@
-# hugotool - Basic Hugo post modification tool
+# hugotool - Basic Hugo post modification and management tool
 
 hugotool is a POSIX shell script that allows some basic modifications to the
 frontmatter section of Hugo posts. It does so in a **destructive** way, by
