@@ -27,22 +27,6 @@ list][hugotool-devel-ml]. If you are not familiar with the Git email patch
 workflow, [git-send-email.io][git-mail-web] is a great resource that walks you
 through the basics. 
 
-When sending a patch for the first time, it is highly recommended to set up the
-email address like this:
-
-```shell-session
-$ git config sendemail.to "~ariadna/hugotool-devel@lists.sr.ht"
-```
-
-The first version of a patch should be marked using ``-v1``:
-
-```shell-session
-$ git send-email --anotate -v1 HEAD^
-```
-
-For further versions of the patch, change ``-v1`` to ``-v2,-v3,...`` as
-required.
-
 Subscribe to the [hugotool-announce mailing list][hugotool-announce-ml] for
 announcements about releases and other critical milestones.
 
