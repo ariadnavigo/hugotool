@@ -1,8 +1,10 @@
 #!/bin/sh
 # See LICENSE file for copyright and license details.
 
+HUGOPREFIX='posts' # change to the desired namespace
+
 usage() {
-    echo 'usage: hugotool CMD FILE' >&2
+    echo 'usage: hugotool CMD POST' >&2
     echo
     echo 'Commands:'
     printf "update\tUpdate the date of a post to the current date.\n"
@@ -41,8 +43,8 @@ undraft() {
 }
 
 case ${1} in
-    "update") update "${2}";;
-    "undraft") undraft "${2}";;
+    "update") update "content/${HUGOPREFIX}/${2}";;
+    "undraft") undraft "content/${HUGOPREFIX}/${2}";;
     *) usage;;
 esac
 

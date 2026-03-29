@@ -9,13 +9,18 @@ modifying the original file.
 To use hugotool just invoke the script as follows:
 
 ```shell
-$ hugotool CMD FILE
+$ hugotool CMD POST
 ```
 
 Available commands follow:
 
 * ``update:`` Update the date of a post to the current date.
 * ``undraft:`` Remove draft status from a post.
+
+By default, the ``POST`` argument refers to a Markdown (or other supported file
+format) under ``content/posts/`` (e.g. ``hugotool update test.md`` would update
+``content/posts/test.md``). The namespace (i.e. ``posts`` in the example) can be
+changed by setting ``HUGOPREFIX``.
 
 ## Contributing
 
