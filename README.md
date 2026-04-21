@@ -8,9 +8,7 @@ modifying the original file.
 
 To use hugotool just invoke the script as follows:
 
-```shell
-$ hugotool CMD POST
-```
+``$ hugotool CMD POST``
 
 Available commands follow:
 
@@ -27,11 +25,11 @@ changed by setting ``HUGOPREFIX``.
 Patches and discussion are welcome at [my catch-all mailing list][pubinb-ml].
 If you are not familiar with the Git email patch workflow,
 [git-send-email.io][git-mail-web] is a great resource that walks you through the
-basics. 
+basics.
 
 ## License
 
-hugotool is licensed under the MIT License. See LICENSE file for copyright and 
+hugotool is licensed under the MIT License. See LICENSE file for copyright and
 license details.
 
 [pubinb-ml]: https://lists.sr.ht/~ariadna/public-inbox
