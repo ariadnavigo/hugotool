@@ -1,52 +1,51 @@
 #!/bin/sh
 # See LICENSE file for copyright and license details.
 
-VERSION='0.0.0'
 HUGOPREFIX='posts' # change to the desired namespace
 
 usage() {
-    echo 'usage: hugotool CMD POST' >&2
-    echo
-    echo 'Commands:'
-    printf "update\tUpdate the date of a post to the current date.\n"
-    printf "undraft\tRemove draft status from a post.\n"
-    exit 1
+  echo 'usage: hugotool CMD POST' >&2
+  echo
+  echo 'Commands:'
+  printf "update\tUpdate the date of a post to the current date.\n"
+  printf "undraft\tRemove draft status from a post.\n"
+  exit 1
 }
 
 update() {
-    if [ -z "${1}" ]; then
-        usage
-    fi
+  if [ -z "${1}" ]; then
+    usage
+  fi
 
-    # 'date -I' is a GNU extension. Needed because POSIX doesn't seem to support
-    # any flag that outputs '+/-HH:MM' formatted timezone offsets. This needs to
-    # be fixed somehow to get to standard compliance.
-    newdate="$(date -I'seconds')"
+  # 'date -I' is a GNU extension. Needed because POSIX doesn't seem to support
+  # any flag that outputs '+/-HH:MM' formatted timezone offsets. This needs to
+  # be fixed somehow to get to standard compliance.
+  newdate="$(date -I'seconds')"
 
-    # We're only supporting TOML right now.
-    sed -E "s/^date = .*?$/date = '${newdate}'/" "${1}" > "${1}.hugotool"
+  # We're only supporting TOML right now.
+  sed -E "s/^date = .*?$/date = '${newdate}'/" "${1}" >"${1}.hugotool"
 
-    # We're avoiding 'sed -i' as it's a non-POSIX extension, even though it's
-    # quite widespread across different implementations. As the goal is to get
-    # rid of the use of the GNU extension 'date -I' above, let's try to stick to
-    # standard compliant code as much as possible.
-    mv "${1}.hugotool" "${1}"
+  # We're avoiding 'sed -i' as it's a non-POSIX extension, even though it's
+  # quite widespread across different implementations. As the goal is to get
+  # rid of the use of the GNU extension 'date -I' above, let's try to stick to
+  # standard compliant code as much as possible.
+  mv "${1}.hugotool" "${1}"
 }
 
 undraft() {
-    if ! [ -f "${1}" ]; then
-        usage
-    fi
+  if ! [ -f "${1}" ]; then
+    usage
+  fi
 
-    sed -E '/^draft.*?$/d' "${1}" > "${1}.hugotool"
+  sed -E '/^draft.*?$/d' "${1}" >"${1}.hugotool"
 
-    mv "${1}.hugotool" "${1}"
+  mv "${1}.hugotool" "${1}"
 }
 
 case ${1} in
-    "update") update "content/${HUGOPREFIX}/${2}";;
-    "undraft") undraft "content/${HUGOPREFIX}/${2}";;
-    *) usage;;
+"update") update "content/${HUGOPREFIX}/${2}" ;;
+"undraft") undraft "content/${HUGOPREFIX}/${2}" ;;
+*) usage ;;
 esac
 
 exit 0
