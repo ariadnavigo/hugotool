@@ -8,7 +8,9 @@ modifying the original file.
 
 To use hugotool just invoke the script as follows:
 
-``$ hugotool CMD POST``
+```shell-session
+hugotool CMD POST
+```
 
 Available commands follow:
 
